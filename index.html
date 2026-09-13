@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>SPACE'S MEL // BY NECE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="intro" class="screen intro-screen">
+  <video id="introVideo" class="intro-video" autoplay muted loop playsinline>
+    <source src="assets/video/intro.mp4" type="video/mp4">
+  </video>
+  <div class="intro-overlay"></div><canvas id="particleCanvas"></canvas>
+  <div class="intro-decor decor-left">夜　血　夢　鎖　赤</div>
+  <div class="intro-decor decor-right">CHAINSAW MAN // マキマ</div>
+  <div class="intro-topline"><span>SPACE'S MEL</span><span>// BY NECE</span></div>
+  <div class="intro-phrase">THE DEVIL NEVER SLEEPS</div>
+  <div class="intro-clock"><span id="introDate"></span><span id="introTime"></span></div>
+  <button type="button" id="enterBtn" class="enter-button">
+  <span>ENTER</span>
+  <i></i>
+</button>
+</section>
+
+<main id="main" class="screen main-screen is-hidden">
+  <div class="background-grid"></div><div class="background-glow"></div>
+  <canvas id="mainParticles"></canvas>
+  <div class="moving-line line-one"></div><div class="moving-line line-two"></div>
+  <div class="japanese japanese-one">血の契約</div>
+  <div class="japanese japanese-two">夢を見るな</div>
+  <div class="japanese japanese-three">夜 / 赤 / 愛</div>
+<div id="makimaDecorBlock">
+        <div class="makima-jp-char char-1">夜</div>
+        <div class="makima-jp-char char-2">赤</div>
+        <div class="makima-jp-char char-3">魂</div>
+        <div class="makima-red-panel"></div>
+        <div class="makima-bottom-mark"></div>
+    </div>
+  <div class="ambient-typography">
+
+    <div class="ambient-main">
+        <span class="ambient-big">Maybe</span>
+        <span class="ambient-small">I'm 2</span>
+    </div>
+
+    <div class="ambient-sub">
+        <span class="ambient-medium">Busy</span>
+        <span class="ambient-tiny">Being</span>
+        <span class="ambient-medium">yours.ও</span>
+    </div>
+
+    <div class="ambient-line"></div>
+
+    <div class="ambient-japanese">
+        <span class="jp-large">終焉</span>
+        <span class="jp-small">赤い夢</span>
+    </div>
+
+    <div class="ambient-jp-detail">
+        血 / 愛 / 支配 / 静寂
+    </div>
+    <div class="ambient-divider"></div>
+
+    <div class="ambient-footer">
+        nothing remains after the last breath
+    </div>
+    <div class="ambient-japanese-block">
+    <div class="ambient-japanese-vertical">
+
+    </div>
+</div>
+</div>
+
+  <div class="system-label"><span> S.N.A // 14</span><span id="mainDate"></span><span id="mainTime"></span></div>
+  <div class="center-music">
+
+    <div class="center-song">
+        <span id="miniSongName">MEL // MAIN THEME</span>
+    </div>
+
+    <span class="center-music-icon">♫</span>
+
+    <div class="center-equalizer" id="miniEqualizer">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+
+</div>
+  <div class="vertical-title">CHAINSAW MAN</div>
+
+  <div class="makima-stage" id="makimaStage">
+    <div class="makima-aura"></div><div class="makima-ring ring-a"></div><div class="makima-ring ring-b"></div>
+    <div class="makima-scan"></div>
+    <img id="makimaRender" class="makima-render" src="assets/makima/makima.png" alt="Makima">
+    <div class="render-caption"><span>公安対魔特異4課</span><strong>MAKIMA</strong><small>マキマ / CONTROL / DEMON HUNTER</small></div>
+  </div>
+
+  <button class="edge-tab tab-about" data-panel="about"><span>ABOUT</span><b>夜</b></button>
+  <button class="edge-tab tab-gallery" data-panel="gallery"><span>GALLERY</span><b>画</b></button>
+  <button class="edge-tab tab-music" data-panel="music"><span>MUSIC</span><b>音</b></button>
+  <button class="edge-tab tab-future" data-panel="future"><span>EXTRA</span><b>赤</b></button>
+  <div class="footer-mark"><span>NOCTURNAL / MEL</span><span>® NECE</span></div>
+
+  <section class="panel" id="panel-about">
+    <button class="panel-close" data-close-panel>×</button>
+    <div class="panel-header"><span>01</span><h2>ABOUT</h2><em>夜 / CONTROL</em></div>
+   <div class="panel-content about-content">
+
+  <p class="eyebrow">公安 / PUBLIC SAFETY</p>
+
+  <div class="owner-profile">
+
+    <div class="owner-avatar">
+      <img src="assets/makima/makima-icon.png" alt="Makima">
+    </div>
+
+    <div class="owner-card">
+
+      <div class="owner-name">Mel</div>
+
+      <div class="owner-register">xMelanie</div>
+
+      <div class="owner-id">UID: 1522194120</div>
+
+    </div>
+
+  </div>
+
+  <h3>WELCOME</h3>
+
+  <p>"There are many things humanity would be happier without. For example, hunger, war, and death. With the power of the Chainsaw, perhaps we could eliminate them."</p>
+
+  <div class="quote-line">「ここに好きな言葉を入れてください。」</div>
+
+  <div class="about-meta">
+    <span>NAME   <b>MELANIE </b></span>
+    <span>COUNTRY   <b>ECUADOR </b></span>
+    <span>
+  RELATIONSHIP
+  <a
+    href="https://xat.me/Nece"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="relationship-link"
+  > <b>MARRIED </b></a>
+</span>
+    <span>STATUS  <b>BUSY</b></span>
+    <span>FAVORITE BAND   <b>MTW & Artic M </b></span>
+    <span>FAVORITE ANIMALS  <b>Perritos, Foquitas, panditas </b></span>
+    <span>GAMES  <b>MOBILE LEGENDS BANG BANG </b></span>
+    <span>CHARACTER   <b>MAKIMA </b></span>
+    <div class="quote-line">"If you stay with me, I can give you a normal life."。」</div>
+
+  </div>
+
+</div>
+  </section>
+
+  <section class="panel panel-gallery" id="panel-gallery">
+    <button class="panel-close" data-close-panel>×</button>
+    <div class="panel-header gallery-header"><span>02</span><h2>GALLERY</h2><em>記憶 / MEMORY</em></div>
+    <div class="gallery-wrap">
+      <button class="gallery-arrow gallery-prev">‹</button>
+      <div class="gallery-track" id="galleryTrack"></div>
+      <button class="gallery-arrow gallery-next">›</button>
+      <div class="gallery-info"><div><span id="galleryIndex">01</span><i>/</i><span id="galleryTotal">10</span></div><h3 id="galleryTitle"></h3><p id="galleryDescription"></p></div>
+    </div>
+    <div class="gallery-hint">DRAG / ← → / SCROLL</div>
+  </section>
+
+<section class="panel" id="panel-music">
+    <button class="panel-close" data-close-panel>×</button>
+
+    <div class="panel-header">
+        <span>03</span>
+        <h2>MUSIC</h2>
+        <em>音 / SOUND</em>
+    </div>
+
+    <div class="music-player">
+
+    <!-- DISCO -->
+    <div class="music-disc">
+        <div class="disc-core"></div>
+    </div>
+
+    <!-- INFORMACIÓN / REPRODUCTOR -->
+    <div class="music-data">
+
+        <span>NOW PLAYING</span>
+
+        <h3 id="musicTitle">KICK BACK</h3>
+
+        <p id="musicArtist">Kenshi Yonezu</p>
+
+        <div class="progress" id="musicProgressBar">
+            <i id="musicProgress"></i>
+        </div>
+
+        <div class="music-time">
+            <span id="musicCurrentTime">0:00</span>
+            <span id="musicDuration">0:00</span>
+        </div>
+
+        <div class="music-visualizer" id="musicVisualizer">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="music-controls">
+            <button id="musicPrev">‹‹</button>
+            <button id="musicPlay">▶</button>
+            <button id="musicNext">››</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- LISTA DE REPRODUCCIÓN -->
+<div class="music-playlist" id="musicPlaylist">
+
+    <div class="playlist-title">
+        <span>PLAYLIST</span>
+        <b>10 TRACKS</b>
+    </div>
+
+    <button class="playlist-item" data-song="0">
+        <span>01</span>
+        <strong>Arabella - Arctic Monkeys</strong>
+    </button>
+
+    <button class="playlist-item" data-song="1">
+        <span>02</span>
+        <strong>Reincarnate - Motionless In White</strong>
+    </button>
+
+    <button class="playlist-item" data-song="2">
+        <span>03</span>
+        <strong>Other Side - New Years Day</strong>
+    </button>
+
+    <button class="playlist-item" data-song="3">
+        <span>04</span>
+        <strong>Knee Socks - Arctic Monkeys</strong>
+    </button>
+
+    <button class="playlist-item" data-song="4">
+        <span>05</span>
+        <strong>Afraid of the Dark - Motionless In White</strong>
+    </button>
+
+    <button class="playlist-item" data-song="5">
+        <span>06</span>
+        <strong>Fireside - Arctic Monkeys</strong>
+    </button>
+
+    <button class="playlist-item" data-song="6">
+        <span>07</span>
+        <strong>Do I Wanna Know? - Arctic Monkeys</strong>
+    </button>
+
+    <button class="playlist-item" data-song="7">
+        <span>08</span>
+        <strong>Eternally Yours - Motionless In White</strong>
+    </button>
+
+    <button class="playlist-item" data-song="8">
+        <span>09</span>
+        <strong>SONG TITLE 09</strong>
+    </button>
+
+    <button class="playlist-item" data-song="9">
+        <span>10</span>
+        <strong>SONG TITLE 10</strong>
+    </button>
+
+</div>
+
+
+<!-- POCHITA -->
+<div class="music-pochita">
+    <img
+        src="assets/images/pochita.png"
+        alt="Pochita"
+    >
+</div>
+
+    <audio id="bgMusic" preload="metadata">
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+    </audio>
+
+</section>
+
+<section class="panel panel-media" id="panel-future">
+
+    <button class="panel-close" data-close-panel>×</button>
+
+    <div class="panel-header">
+        <span>04</span>
+        <h2>MEDIA</h2>
+        <em>映画 / ANIME / SERIES</em>
+    </div>
+
+   <div class="media-content">
+
+    <!-- BOTÓN ANTERIOR -->
+    <button
+        type="button"
+        class="media-arrow media-prev"
+        id="mediaPrev"
+        aria-label="Previous"
+    >↑</button>
+
+    <div class="media-counter">
+        <span id="mediaCurrent">01</span>
+        <i>/</i>
+        <span>07</span>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="media-video-frame">
+
+        <div class="media-scan"></div>
+
+        <video
+            id="mediaVideo"
+            class="media-video"
+            muted
+            playsinline
+            autoplay
+            loop
+        >
+            <source
+                id="mediaVideoSource"
+                src="assets/media/media01.mp4"
+                type="video/mp4"
+            >
+        </video>
+
+        <div class="media-corner corner-tl"></div>
+        <div class="media-corner corner-tr"></div>
+        <div class="media-corner corner-bl"></div>
+        <div class="media-corner corner-br"></div>
+
+    </div>
+
+
+    <!-- INFORMACIÓN -->
+    <div class="media-info">
+
+        <span class="media-type" id="mediaType">
+            FILM / 01
+        </span>
+
+        <h3 id="mediaTitle">
+            TITLE
+        </h3>
+
+        <p id="mediaQuote">
+            "Aquí irá la frase o descripción de la obra."
+        </p>
+
+    </div>
+
+
+    <!-- IMÁGENES ABAJO DEL TODO -->
+    <div class="media-images" id="mediaImages">
+
+        <img id="mediaImage1" src="" alt="">
+        <img id="mediaImage2" src="" alt="">
+        <img id="mediaImage3" src="" alt="">
+
+    </div>
+
+
+    <!-- BOTÓN SIGUIENTE -->
+    <button
+        type="button"
+        class="media-arrow media-next"
+        id="mediaNext"
+        aria-label="Next"
+    >↓</button>
+
+    <div class="media-keyhint">
+        ↑ ↓ &nbsp; / &nbsp; KEYBOARD
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+</main>
+<script src="script.js"></script>
+
+</body>
+</html>
