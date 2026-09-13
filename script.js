@@ -671,3 +671,53 @@ if(galleryTrack){
         galleryTrack.querySelectorAll('.gallery-card').forEach(card => card.classList.remove('is-hovering'));
     });
 }
+const mediaPanel = document.getElementById('panel-future');
+let isScrolling = false; // Bloqueo para evitar que el scroll salte demasiado rápido
+
+function handleMediaScroll(direction) {
+    if (isScrolling || !mediaPanel || !mediaPanel.classList.contains('is-open')) return;
+
+    isScrolling = true;
+
+    // Aquí simulamos el clic en tu botón correspondiente ('media-next' o 'media-prev')
+    // para usar exactamente la misma lógica que ya tienes funcionando con las flechas:
+    if (direction === 'next') {
+        const nextBtn = mediaPanel.querySelector('.media-next');
+        if (nextBtn) nextBtn.click();
+    } else {
+        const prevBtn = mediaPanel.querySelector('.media-prev');
+        if (prevBtn) prevBtn.click();
+    }
+
+    // Tiempo de espera (en milisegundos) antes de permitir otro scroll
+    setTimeout(() => {
+        isScrolling = false;
+    }, 400); // 400ms coincide bien con la duración de las animaciones
+}
+
+// 1. Flechas del teclado (Arriba / Abajo)
+window.addEventListener('keydown', (e) => {
+    if (!mediaPanel || !mediaPanel.classList.contains('is-open')) return;
+
+    if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        handleMediaScroll('next');
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        handleMediaScroll('prev');
+    }
+});
+
+// 2. Rueda del mouse (Scroll) con control de velocidad
+if (mediaPanel) {
+    mediaPanel.addEventListener('wheel', (e) => {
+        if (!mediaPanel.classList.contains('is-open')) return;
+        e.preventDefault();
+
+        if (e.deltaY > 0) {
+            handleMediaScroll('next'); // Scroll hacia abajo
+        } else if (e.deltaY < 0) {
+            handleMediaScroll('prev'); // Scroll hacia arriba
+        }
+    }, { passive: false });
+}
