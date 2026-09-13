@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     const MUSIC_ITEMS = [
         {
-            file: 'assets/music/song10.mp3',
+            file: 'assets/music/song01.mp3',
             title: 'Arabella',
             artist: 'Arctic Monkeys'
         },
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             artist: 'Arctic Monkeys'
         },
         {
-            file: 'assets/music/song01.mp3',
+            file: 'assets/music/song10.mp3',
             title: 'Eternally Yours',
             artist: 'Motionless In White'
         }
