@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded',()=>{
         },
         {
             file: 'assets/music/song02.mp3',
-            title: 'Im So Sorry',
-            artist: 'Dearest'
+            title: 'Dearest (Im So Sorry)',
+            artist: 'Picture Me Broken'
         },
         {
             file: 'assets/music/song03.mp3',
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         {
             file: 'assets/music/song04.mp3',
             title: 'The Drug In Me Is You',
-            artist: 'Epitaph Records'
+            artist: 'EFalling In Reverse'
         },
         {
             file: 'assets/music/song05.mp3',
