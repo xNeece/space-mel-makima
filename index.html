@@ -7,12 +7,13 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="app-canvas">
 <section id="intro" class="screen intro-screen">
   <video id="introVideo" class="intro-video" autoplay muted loop playsinline>
     <source src="assets/video/intro.mp4" type="video/mp4">
   </video>
   <div class="intro-overlay"></div><canvas id="particleCanvas"></canvas>
-  <div class="intro-decor decor-left">夜　血　夢　鎖　赤</div>
+  <div class="intro-decor decor-left">夜 血 夢 鎖 赤</div>
   <div class="intro-decor decor-right">CHAINSAW MAN // マキマ</div>
   <div class="intro-topline"><span>SPACE'S MEL</span><span>// BY NECE</span></div>
   <div class="intro-phrase">THE DEVIL NEVER SLEEPS</div>
@@ -227,7 +228,6 @@
 
 </div>
 
-
 <!-- LISTA DE REPRODUCCIÓN -->
 <div class="music-playlist" id="musicPlaylist">
 
@@ -288,7 +288,6 @@
 
 </div>
 
-
 <!-- POCHITA -->
 <div class="music-pochita">
     <img
@@ -315,7 +314,6 @@
 
    <div class="media-content">
 
-    <!-- BOTÓN ANTERIOR -->
     <button
         type="button"
         class="media-arrow media-prev"
@@ -329,11 +327,8 @@
         <span>07</span>
     </div>
 
-    <!-- VIDEO -->
     <div class="media-video-frame">
-
         <div class="media-scan"></div>
-
         <video
             id="mediaVideo"
             class="media-video"
@@ -348,44 +343,24 @@
                 type="video/mp4"
             >
         </video>
-
         <div class="media-corner corner-tl"></div>
         <div class="media-corner corner-tr"></div>
         <div class="media-corner corner-bl"></div>
         <div class="media-corner corner-br"></div>
-
     </div>
 
-
-    <!-- INFORMACIÓN -->
     <div class="media-info">
-
-        <span class="media-type" id="mediaType">
-            FILM / 01
-        </span>
-
-        <h3 id="mediaTitle">
-            TITLE
-        </h3>
-
-        <p id="mediaQuote">
-            "Aquí irá la frase o descripción de la obra."
-        </p>
-
+        <span class="media-type" id="mediaType">FILM / 01</span>
+        <h3 id="mediaTitle">TITLE</h3>
+        <p id="mediaQuote">"Aquí irá la frase o descripción de la obra."</p>
     </div>
 
-
-    <!-- IMÁGENES ABAJO DEL TODO -->
     <div class="media-images" id="mediaImages">
-
         <img id="mediaImage1" src="" alt="">
         <img id="mediaImage2" src="" alt="">
         <img id="mediaImage3" src="" alt="">
-
     </div>
 
-
-    <!-- BOTÓN SIGUIENTE -->
     <button
         type="button"
         class="media-arrow media-next"
@@ -399,11 +374,9 @@
 
 </div>
 
-    </div>
-
 </section>
 </main>
+</div>
 <script src="script.js"></script>
-
 </body>
 </html>
