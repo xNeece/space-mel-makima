@@ -16,53 +16,53 @@ document.addEventListener('DOMContentLoaded',()=>{
     const MUSIC_ITEMS = [
         {
             file: 'assets/music/song01.mp3',
-            title: 'Arabella',
-            artist: 'Arctic Monkeys'
+            title: 'Chainsaw Man – The Movie',
+            artist: 'Kenshi Yonezu'
         },
         {
             file: 'assets/music/song02.mp3',
+            title: 'Im So Sorry',
+            artist: 'Dearest'
+        },
+        {
+            file: 'assets/music/song03.mp3',
+            title: 'Bleeders',
+            artist: 'Black Veil Brides'
+        },
+        {
+            file: 'assets/music/song04.mp3',
+            title: 'The Drug In Me Is You',
+            artist: 'Epitaph Records'
+        },
+        {
+            file: 'assets/music/song05.mp3',
+            title: 'Pumped Up Kicks',
+            artist: 'Foster The People'
+        },
+        {
+            file: 'assets/music/song06.mp3',
+            title: 'Hero',
+            artist: 'Meego'
+        },
+        {
+            file: 'assets/music/song07.mp3',
+            title: 'The Show Must Go on Prt. 1',
+            artist: 'InVogue Records'
+        },
+        {
+            file: 'assets/music/song08.mp3',
             title: 'Reincarnate',
             artist: 'Motionless In White'
         },
         {
-            file: 'assets/music/song03.mp3',
-            title: 'Other Side',
-            artist: 'New Years Day'
-        },
-        {
-            file: 'assets/music/song04.mp3',
-            title: 'Knee Socks',
-            artist: 'Arctic Monkeys'
-        },
-        {
-            file: 'assets/music/song05.mp3',
-            title: 'Afraid of the Dark',
-            artist: 'Motionless In White'
-        },
-        {
-            file: 'assets/music/song06.mp3',
-            title: 'Fireside',
-            artist: 'Arctic Monkeys'
-        },
-        {
-            file: 'assets/music/song07.mp3',
-            title: '505 - Favourite Worst Nightmare',
-            artist: 'Arctic Monkeys'
-        },
-        {
-            file: 'assets/music/song08.mp3',
+            file: 'assets/music/song09.mp3',
             title: 'Do I Wanna Know?',
             artist: 'Arctic Monkeys'
         },
         {
-            file: 'assets/music/song09.mp3',
-            title: 'R U Mine?',
-            artist: 'Arctic Monkeys'
-        },
-        {
             file: 'assets/music/song10.mp3',
-            title: 'Eternally Yours',
-            artist: 'Motionless In White'
+            title: 'Other Side',
+            artist: 'New Yers Day'
         }
     ];
 
