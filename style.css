@@ -604,3 +604,214 @@ overflow:visible !important;
 #panel-future .media-images img{ display:block !important; flex:0 0 52px !important; width:52px !important; height:62px !important; object-fit:cover !important; border:1px solid rgba(239,23,77,.42); border-radius:4px; background:#050106; opacity:.9; position:relative; transform-origin:center center; transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s ease,box-shadow .35s ease; box-shadow:0 4px 10px rgba(0,0,0,.60); z-index:1; }
 
 .makima-render{ width:620px !important; height:auto !important; max-width:none !important; --makima-x: 0px; --makima-y: 0px; position:relative; left:var(--makima-x); top:var(--makima-y); }
+
+/* ==========================================================
+ *  MARRIED — ENLACE SIMPLE
+ *  ========================================================== */
+
+#panel-about .about-meta .relationship-link{
+display:inline-block;
+position:static;
+
+margin:0;
+padding:0;
+
+color:inherit;
+font-size:inherit;
+font-weight:inherit;
+letter-spacing:inherit;
+
+text-decoration:none !important;
+cursor:pointer;
+
+transition:
+color .25s ease,
+text-shadow .25s ease,
+transform .25s ease;
+}
+
+#panel-about .about-meta .relationship-link:hover{
+color:var(--bright);
+text-decoration:none !important;
+
+/* Zoom muy leve */
+transform:scale(1.03);
+
+text-shadow:
+0 0 5px rgba(239,23,77,.55),
+0 0 9px rgba(239,23,77,.20);
+}
+
+/* Elimina cualquier línea decorativa */
+#panel-about .about-meta .relationship-link::before,
+#panel-about .about-meta .relationship-link::after{
+display:none !important;
+content:none !important;
+}
+/* ABOUT — información personal un poco más grande */
+#panel-about .about-meta{
+font-size:9px;
+letter-spacing:.22em;
+gap:11px;
+}
+/* =========================================================
+ *  HOVER — ZOOM + MARCO BRILLANTE
+ *  ========================================================= */
+
+#panel-future .media-images img:hover{
+
+opacity:1;
+
+border-color:rgba(255,255,255,.85);
+
+filter:
+brightness(1.12)
+contrast(1.05);
+
+box-shadow:
+0 8px 22px rgba(0,0,0,.75),
+0 0 8px rgba(239,23,77,.8),
+0 0 20px rgba(239,23,77,.45),
+0 0 32px rgba(255,255,255,.12);
+
+z-index:20;
+}
+/* =========================================================
+ *  MEDIA — IMÁGENES INTERACTIVAS
+ *  ZOOM + GLOW + PARALLAX + REFLEJO
+ *  ========================================================= */
+
+#panel-future .media-images{
+width:max-content;
+max-width:none;
+
+margin:25px auto 0;
+
+display:flex;
+flex-direction:row;
+flex-wrap:nowrap;
+
+justify-content:center;
+align-items:center;
+
+gap:15px;
+
+position:relative;
+left:-15px;
+
+z-index:10;
+
+box-sizing:border-box;
+}
+/* =========================================================
+ *  CONTENEDOR DE CADA IMAGEN
+ *  ========================================================= */
+
+#panel-future .media-images img{
+width:75px;
+height:90px;
+
+min-width:75px;
+min-height:90px;
+
+flex:0 0 75px;
+
+object-fit:cover;
+
+display:block;
+
+border:1px solid rgba(239,23,77,.42);
+
+border-radius:4px;
+
+background:#050106;
+
+opacity:.9;
+
+position:relative;
+
+transform-origin:center center;
+
+transition:
+transform .35s cubic-bezier(.2,.8,.2,1),
+opacity .3s ease,
+box-shadow .35s ease,
+border-color .35s ease,
+filter .35s ease;
+
+box-shadow:
+0 5px 14px rgba(0,0,0,.60),
+0 0 10px rgba(239,23,77,.10);
+
+z-index:1;
+
+/* Variables del parallax */
+--px:0px;
+--py:0px;
+}
+/* =========================================================
+ *  POSICIONES ORIGINALES
+ *  ========================================================= */
+
+#panel-future .media-images img:nth-child(1){
+transform:
+translate(var(--px),var(--py))
+rotate(-2deg);
+
+z-index:1;
+}
+
+
+#panel-future .media-images img:nth-child(2){
+transform:
+translate(var(--px),var(--py))
+translateY(-3px)
+scale(1.04);
+
+opacity:1;
+
+z-index:3;
+
+box-shadow:
+0 7px 18px rgba(0,0,0,.68),
+0 0 13px rgba(239,23,77,.16);
+}
+
+
+#panel-future .media-images img:nth-child(3){
+transform:
+translate(var(--px),var(--py))
+rotate(2deg);
+
+z-index:1;
+}
+/* =========================================================
+ * MEDIA — 3 IMÁGENES / HORIZONTAL + MARCOS + ROTACIÓN
+ * ========================================================= */
+
+#panel-future .media-images{
+width:max-content;
+max-width:none;
+
+margin:25px auto 0;
+
+display:flex;
+flex-direction:row;
+flex-wrap:nowrap;
+
+justify-content:center;
+align-items:center;
+
+gap:15px;
+
+position:relative;
+
+/* mover TODO el grupo hacia la izquierda */
+left:-15px;
+
+z-index:10;
+
+box-sizing:border-box;
+
+pointer-events:auto;
+}
