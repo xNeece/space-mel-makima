@@ -274,9 +274,17 @@ button{font:inherit;color:inherit}
 #panel-about .about-meta{
 display:flex; flex-direction:column; gap:8px;
 font-size:8px; letter-spacing:.18em; color:rgba(255,255,255,.36);
+font-size: 7px !important;       /* Reduce el tamaño del texto (puedes probar con 7px u 8px) */
+letter-spacing: .22em;
+gap: 10px;                       /* Espacio vertical entre cada fila */
+
 }
 
-#panel-about .about-meta span{ display:grid; grid-template-columns:120px 1fr; align-items:center; }
+#panel-about .about-meta span {
+display: grid;
+grid-template-columns: 140px 1fr !important; /* Aumenta el primer valor (ej. de 120px a 140px) para separar las columnas */
+align-items: center;
+}
 #panel-about .about-meta span a{ color:inherit; }
 
 /* GALLERY WRAP & CARDS */
@@ -814,4 +822,74 @@ z-index:10;
 box-sizing:border-box;
 
 pointer-events:auto;
+}
+/* Estructura general del panel de música para acomodar los elementos inferiores */
+#panel-music {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+#panel-music {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+overflow-y: auto;
+}
+/* Ajuste exacto de la altura y posición de la playlist */
+.panel #panel-music .music-playlist,
+.panel .music-playlist {
+    height: 140px !important;
+    left: 35px !important;
+    bottom: 25px !important;
+    max-height: 180px !important;
+    margin-top: 5px !important;
+}
+
+/* Ajuste exacto del contenedor y la imagen de Pochita */
+.panel #panel-music .music-pochita,
+.panel .music-pochita {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+}
+
+.panel #panel-music .music-pochita img,
+.panel .music-pochita img {
+    width: 140px !important;
+    max-width: 130% !important;
+    right: 30px !important;
+    height: auto !important;
+}
+/* Ajustar la posición de Pochita para que se vea más arriba y centrado en su espacio */
+.panel #panel-music .music-pochita,
+.panel .music-pochita {
+    position: absolute !important;
+    right: 40px !important;
+    bottom: 50px !important;
+    margin-top: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.panel #panel-music .music-pochita img,
+.panel .music-pochita img {
+    position: relative !important;
+    right: 0 !important;
+    width: 130px !important;
+    max-width: none !important;
+    height: auto !important;
+}
+.gallery-item {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    border-color: #ff2a4d; /* El color rojo característico de tu panel */
+    box-shadow: 0 0 15px rgba(255, 42, 77, 0.4); /* Brillo sutil */
+    transform: translateY(-3px);
 }

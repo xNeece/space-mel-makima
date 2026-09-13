@@ -164,8 +164,15 @@ document.addEventListener('DOMContentLoaded',()=>{
             const cards=[...document.querySelectorAll('.gallery-card')],total=cards.length;
             cards.forEach((card,i)=>{
                 let o=i-current;if(o>total/2)o-=total;if(o<-total/2)o+=total;const a=Math.abs(o),s=Math.sign(o);
-                const x=o*150,z=-a*115,scale=a===0?1:Math.max(.58,1-a*.12),rot=s*Math.min(34,a*13),opacity=a>3?0:Math.max(.22,1-a*.23),blur=a===0?0:Math.min(3,a*.8),y=a===0?0:Math.min(45,a*12);
-                card.style.transform=`translate3d(${x}px,${y}px,${z}px) rotateY(${rot}deg) scale(${scale})`;card.style.opacity=opacity;card.style.filter=`blur(${blur}px)`;card.style.zIndex=100-a;card.classList.toggle('active',a===0);
+
+                const x=o*55, z=-a*35, scale=a===0?1:Math.max(0.7, 1 - a * 0.07), rot=s*Math.min(15, a * 7), opacity=a>2?0:Math.max(0.3, 1 - a * 0.25), blur=a===0?0:Math.min(2, a * 0.8), y=a===0?0:Math.min(12, a * 4);
+
+                card.style.transform=`translate3d(${x}px,${y}px,${z}px) rotateY(${rot}deg) scale(${scale})`;
+                card.style.opacity=opacity;
+                card.style.filter=`blur(${blur}px)`;
+                card.style.zIndex=100-a;
+                card.classList.toggle('active',a===0);
+                card.style.pointerEvents=a>2?'none':'auto';
             });
             const it=GALLERY_ITEMS[current];if(it){gIndex.textContent=String(current+1).padStart(2,'0');gTitle.textContent=it.title;gDesc.textContent=it.description}
         }
