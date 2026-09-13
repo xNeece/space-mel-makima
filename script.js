@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         {
             file: 'assets/music/song04.mp3',
             title: 'The Drug In Me Is You',
-            artist: 'EFalling In Reverse'
+            artist: 'Falling In Reverse'
         },
         {
             file: 'assets/music/song05.mp3',
