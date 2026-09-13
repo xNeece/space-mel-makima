@@ -54,7 +54,7 @@ button{font:inherit;color:inherit}
 .system-label{
     position:absolute;
     z-index:5;
-    top:25px !important;
+    top:65px !important;
     right:5%;
     display:flex;
     gap:22px;
@@ -422,7 +422,7 @@ align-items: center;
     position:absolute;
     z-index:20;
     left:68% !important;
-    top:22px !important;
+    top:65px !important;
     transform:translateX(-50%);
     height:24px;
     display:flex;
@@ -892,4 +892,14 @@ overflow-y: auto;
     border-color: #ff2a4d; /* El color rojo característico de tu panel */
     box-shadow: 0 0 15px rgba(255, 42, 77, 0.4); /* Brillo sutil */
     transform: translateY(-3px);
+}
+/* PANELES CORRIDOS A LA DERECHA Y BAJADOS PARA EVITAR EL BANNER */
+.panel, .panel-gallery {
+    position: absolute;
+    z-index: 100;
+    left: 125px !important;
+    top: 97px !important; /* Cambiado de 60px a 130px para que queden debajo del banner */
+    width: 430px;
+    height: 520px;
+    /* El resto de las propiedades se mantienen igual */
 }
