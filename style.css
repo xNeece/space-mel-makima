@@ -932,3 +932,68 @@ overflow-y: auto;
     transform: scale(1.08);
     transition: transform 0.4s cubic-bezier(.16,1,.3,1);
 }
+/*LOOP INFINITO MAKIMA OJOS*/
+
+/* Contenedor principal: Controla posición libre, tamaño, marco, brillo y efectos */
+#leftVideoContainer {
+    position: absolute;  /* Cambia a 'fixed' si quieres que se quede fijo al hacer scroll */
+    left: 125px;         /* Modifica este valor para moverlo a la izquierda o derecha a voluntad */
+    top: 50%;            /* Modifica este valor (ej. 40%, 200px) para moverlo arriba o abajo */
+    transform: translateY(-50%); /* Si cambias 'top' por píxeles fijos, puedes eliminar esta línea para mayor control */
+    
+    width: 470px;        /* Ancho del contenedor (puedes usar px, %, vw) */
+    height: 260px;       /* Alto/Largo del contenedor (puedes usar px, auto, etc.) */
+    z-index: 10;
+    
+    /* Marco y brillo fijo permanente */
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                inset 0 0 15px rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Capa animada de la línea gruesa oscura y transparente que cruza por encima */
+#leftVideoContainer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        135deg,
+        transparent 42%,
+        rgba(0, 0, 0, 0.45) 50%, 
+        transparent 58%
+    );
+    pointer-events: none;
+    animation: glossSweep 4s infinite linear;
+}
+
+@keyframes glossSweep {
+    0% {
+        transform: translate(-30%, -30%);
+    }
+    100% {
+        transform: translate(50%, 50%);
+    }
+}
+
+/* Efecto al pasar el cursor (zoom y refuerzo de brillo) */
+#leftVideoContainer:hover {
+    transform: translateY(-50%) scale(1.03); /* Mantén el translateY(-50%) si usas top: 50% */
+    box-shadow: 0 20px 45px rgba(239, 23, 77, 0.4), 
+                inset 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Ajuste del contenido interno (Video / Imagen) para que respete las dimensiones */
+#leftVideoContainer video,
+#leftVideoContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cambia a 'contain' si no quieres que se recorten los bordes del video */
+    display: block;
+}

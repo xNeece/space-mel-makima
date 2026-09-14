@@ -5,9 +5,45 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <title>SPACE'S MEL // BY NECE</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  /* ESTILOS DE ADAPTACIÓN PARA EL VIDEO IZQUIERDO Y TRANSICIONES */
+  .is-hidden {
+      display: none !important;
+  }
+
+  .left-video-container {
+      position: absolute;
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 280px;
+      height: 480px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 42, 117, 0.6);
+      box-shadow: 0 0 25px rgba(255, 42, 117, 0.4), inset 0 0 15px rgba(255, 42, 117, 0.2);
+      z-index: 10;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .makima-loop-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+  }
+
+  .left-video-container.hidden-video {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-50%) scale(0.95);
+  }
+</style>
 </head>
 <body>
 <div id="app-canvas">
+
+<!-- 1. PANTALLA DE INTRODUCCIÓN -->
 <section id="intro" class="screen intro-screen">
   <video id="introVideo" class="intro-video" autoplay muted loop playsinline>
     <source src="assets/video/intro.mp4" type="video/mp4">
@@ -24,6 +60,7 @@
 </button>
 </section>
 
+<!-- 2. INTERFAZ PRINCIPAL -->
 <main id="main" class="screen main-screen is-hidden">
   <div class="background-grid"></div><div class="background-glow"></div>
   <canvas id="mainParticles"></canvas>
@@ -31,15 +68,24 @@
   <div class="japanese japanese-one">血の契約</div>
   <div class="japanese japanese-two">夢を見るな</div>
   <div class="japanese japanese-three">夜 / 赤 / 愛</div>
-<div id="makimaDecorBlock">
+  
+  <div id="makimaDecorBlock">
         <div class="makima-jp-char char-1">夜</div>
         <div class="makima-jp-char char-2">赤</div>
         <div class="makima-jp-char char-3">魂</div>
         <div class="makima-red-panel"></div>
         <div class="makima-bottom-mark"></div>
-    </div>
-  <div class="ambient-typography">
+  </div>
 
+  <!-- VIDEO LOOP IZQUIERDO DE MAKIMA CON MARCO ROSADO -->
+  <div class="left-video-container" id="leftVideoContainer">
+      <video class="makima-loop-video" autoplay muted loop playsinline>
+          <source src="assets/media/loopmakima.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video.
+      </video>
+  </div>
+
+  <div class="ambient-typography">
     <div class="ambient-main">
         <span class="ambient-big">Maybe</span>
         <span class="ambient-small">I'm 2</span>
@@ -67,33 +113,20 @@
         nothing remains after the last breath
     </div>
     <div class="ambient-japanese-block">
-    <div class="ambient-japanese-vertical">
-
+      <div class="ambient-japanese-vertical"></div>
     </div>
-</div>
-</div>
+  </div>
 
   <div class="system-label"><span> S.N.A // 14</span><span id="mainDate"></span><span id="mainTime"></span></div>
   <div class="center-music">
-
     <div class="center-song">
         <span id="miniSongName">MEL // MAIN THEME</span>
     </div>
-
     <span class="center-music-icon">♫</span>
-
     <div class="center-equalizer" id="miniEqualizer">
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
     </div>
-
-</div>
+  </div>
   <div class="vertical-title">CHAINSAW MAN</div>
 
   <div class="makima-stage" id="makimaStage">
@@ -109,61 +142,43 @@
   <button class="edge-tab tab-future" data-panel="future"><span>EXTRA</span><b>赤</b></button>
   <div class="footer-mark"><span>NOCTURNAL / MEL</span><span>® NECE</span></div>
 
+  <!-- PANEL ABOUT -->
   <section class="panel" id="panel-about">
     <button class="panel-close" data-close-panel>×</button>
     <div class="panel-header"><span>01</span><h2>ABOUT</h2><em>夜 / CONTROL</em></div>
-   <div class="panel-content about-content">
-
-  <p class="eyebrow">公安 / PUBLIC SAFETY</p>
-
-  <div class="owner-profile">
-
-    <div class="owner-avatar">
-      <img src="assets/makima/makima-icon.png" alt="Makima">
+    <div class="panel-content about-content">
+      <p class="eyebrow">公安 / PUBLIC SAFETY</p>
+      <div class="owner-profile">
+        <div class="owner-avatar">
+          <img src="assets/makima/makima-icon.png" alt="Makima">
+        </div>
+        <div class="owner-card">
+          <div class="owner-name">Mel</div>
+          <div class="owner-register">xMelanie</div>
+          <div class="owner-id">UID: 1522194120</div>
+        </div>
+      </div>
+      <h3>WELCOME</h3>
+      <p>"There are many things humanity would be happier without. For example, hunger, war, and death. With the power of the Chainsaw, perhaps we could eliminate them."</p>
+      <div class="quote-line">「ここに好きな言葉を入れてください。」</div>
+      <div class="about-meta">
+        <span>NAME   <b>MELANIE </b></span>
+        <span>COUNTRY   <b>ECUADOR </b></span>
+        <span>
+          RELATIONSHIP
+          <a href="https://xat.me/Nece" target="_blank" rel="noopener noreferrer" class="relationship-link"><b>MARRIED </b></a>
+        </span>
+        <span>STATUS  <b>BUSY</b></span>
+        <span>FAVORITE BAND   <b>MTW & Artic M </b></span>
+        <span>FAVORITE ANIMALS  <b>Perritos, Foquitas, panditas </b></span>
+        <span>GAMES  <b>MOBILE LEGENDS BANG BANG </b></span>
+        <span>CHARACTER   <b>MAKIMA </b></span>
+        <div class="quote-line">"If you stay with me, I can give you a normal life."</div>
+      </div>
     </div>
-
-    <div class="owner-card">
-
-      <div class="owner-name">Mel</div>
-
-      <div class="owner-register">xMelanie</div>
-
-      <div class="owner-id">UID: 1522194120</div>
-
-    </div>
-
-  </div>
-
-  <h3>WELCOME</h3>
-
-  <p>"There are many things humanity would be happier without. For example, hunger, war, and death. With the power of the Chainsaw, perhaps we could eliminate them."</p>
-
-  <div class="quote-line">「ここに好きな言葉を入れてください。」</div>
-
-  <div class="about-meta">
-    <span>NAME   <b>MELANIE </b></span>
-    <span>COUNTRY   <b>ECUADOR </b></span>
-    <span>
-  RELATIONSHIP
-  <a
-    href="https://xat.me/Nece"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="relationship-link"
-  > <b>MARRIED </b></a>
-</span>
-    <span>STATUS  <b>BUSY</b></span>
-    <span>FAVORITE BAND   <b>MTW & Artic M </b></span>
-    <span>FAVORITE ANIMALS  <b>Perritos, Foquitas, panditas </b></span>
-    <span>GAMES  <b>MOBILE LEGENDS BANG BANG </b></span>
-    <span>CHARACTER   <b>MAKIMA </b></span>
-    <div class="quote-line">"If you stay with me, I can give you a normal life."。」</div>
-
-  </div>
-
-</div>
   </section>
 
+  <!-- PANEL GALLERY -->
   <section class="panel panel-gallery" id="panel-gallery">
     <button class="panel-close" data-close-panel>×</button>
     <div class="panel-header gallery-header"><span>02</span><h2>GALLERY</h2><em>記憶 / MEMORY</em></div>
@@ -176,40 +191,29 @@
     <div class="gallery-hint">DRAG / ← → / SCROLL</div>
   </section>
 
-<section class="panel" id="panel-music">
+  <!-- PANEL MUSIC -->
+  <section class="panel" id="panel-music">
     <button class="panel-close" data-close-panel>×</button>
-
     <div class="panel-header">
         <span>03</span>
         <h2>MUSIC</h2>
         <em>音 / SOUND</em>
     </div>
-
     <div class="music-player">
-
-    <!-- DISCO -->
-    <div class="music-disc">
-        <div class="disc-core"></div>
-    </div>
-
-    <!-- INFORMACIÓN / REPRODUCTOR -->
-    <div class="music-data">
-
+      <div class="music-disc">
+          <div class="disc-core"></div>
+      </div>
+      <div class="music-data">
         <span>NOW PLAYING</span>
-
         <h3 id="musicTitle">KICK BACK</h3>
-
         <p id="musicArtist">Kenshi Yonezu</p>
-
         <div class="progress" id="musicProgressBar">
             <i id="musicProgress"></i>
         </div>
-
         <div class="music-time">
             <span id="musicCurrentTime">0:00</span>
             <span id="musicDuration">0:00</span>
         </div>
-
         <div class="music-visualizer" id="musicVisualizer">
             <span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span>
@@ -217,166 +221,131 @@
             <span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span>
         </div>
-
         <div class="music-controls">
             <button id="musicPrev">‹‹</button>
             <button id="musicPlay">▶</button>
             <button id="musicNext">››</button>
         </div>
-
+      </div>
     </div>
 
-</div>
-
-<!-- LISTA DE REPRODUCCIÓN -->
-<div class="music-playlist" id="musicPlaylist">
-
-    <div class="playlist-title">
-        <span>PLAYLIST</span>
-        <b>10 TRACKS</b>
+    <div class="music-playlist" id="musicPlaylist">
+      <div class="playlist-title">
+          <span>PLAYLIST</span>
+          <b>10 TRACKS</b>
+      </div>
+      <button class="playlist-item" data-song="0"><span>01</span><strong>Chainsaw Man The Movie - Kenshi Yonezu</strong></button>
+      <button class="playlist-item" data-song="1"><span>02</span><strong>Dearest (Im So Sorry) - Picture Me Broken</strong></button>
+      <button class="playlist-item" data-song="2"><span>03</span><strong>Bleeders - Black Veil Brides</strong></button>
+      <button class="playlist-item" data-song="3"><span>04</span><strong>The Drug In Me Is You - Falling In Reverse</strong></button>
+      <button class="playlist-item" data-song="4"><span>05</span><strong>Pumped Up Kicks - Foster The People</strong></button>
+      <button class="playlist-item" data-song="5"><span>06</span><strong>Hero - Meego</strong></button>
+      <button class="playlist-item" data-song="6"><span>07</span><strong>The Show Must Go on Prt. 1 - InVogue Records</strong></button>
+      <button class="playlist-item" data-song="7"><span>08</span><strong>Reincarnate - Motionless In White</strong></button>
+      <button class="playlist-item" data-song="8"><span>09</span><strong>Do I Wanna Know? - Arctic Monkeys</strong></button>
+      <button class="playlist-item" data-song="9"><span>10</span><strong>Other Side - New Yers Day</strong></button>
     </div>
 
-    <button class="playlist-item" data-song="0">
-        <span>01</span>
-        <strong>Chainsaw Man The Movie - Kenshi Yonezu</strong>
-    </button>
-
-    <button class="playlist-item" data-song="1">
-        <span>02</span>
-        <strong>Dearest (Im So Sorry) - Picture Me Broken</strong>
-    </button>
-
-    <button class="playlist-item" data-song="2">
-        <span>03</span>
-        <strong>Bleeders - Black Veil Brides</strong>
-    </button>
-
-    <button class="playlist-item" data-song="3">
-        <span>04</span>
-        <strong>The Drug In Me Is You - Falling In Reverse</strong>
-    </button>
-
-    <button class="playlist-item" data-song="4">
-        <span>05</span>
-        <strong>Pumped Up Kicks - Foster The People</strong>
-    </button>
-
-    <button class="playlist-item" data-song="5">
-        <span>06</span>
-        <strong>Hero - Meego</strong>
-    </button>
-
-    <button class="playlist-item" data-song="6">
-        <span>07</span>
-        <strong>The Show Must Go on Prt. 1 - InVogue Records</strong>
-    </button>
-
-    <button class="playlist-item" data-song="7">
-        <span>08</span>
-        <strong>Reincarnate - Motionless In White</strong>
-    </button>
-
-    <button class="playlist-item" data-song="8">
-        <span>09</span>
-        <strong>Do I Wanna Know? - Arctic Monkeys</strong>
-    </button>
-
-    <button class="playlist-item" data-song="9">
-        <span>10</span>
-        <strong>Other Side - New Yers Day</strong>
-    </button>
-
-</div>
-
-<!-- POCHITA -->
-<div class="music-pochita">
-    <img
-        src="assets/images/pochita.png"
-        alt="Pochita"
-    >
-</div>
+    <div class="music-pochita">
+        <img src="assets/images/pochita.png" alt="Pochita">
+    </div>
 
     <audio id="bgMusic" preload="metadata">
         <source src="assets/music/music.mp3" type="audio/mpeg">
     </audio>
+  </section>
 
-</section>
-
-<section class="panel panel-media" id="panel-future">
-
+  <!-- PANEL MEDIA -->
+  <section class="panel panel-media" id="panel-future">
     <button class="panel-close" data-close-panel>×</button>
-
     <div class="panel-header">
         <span>04</span>
         <h2>MEDIA</h2>
         <em>映画 / ANIME / SERIES</em>
     </div>
-
-   <div class="media-content">
-
-    <button
-        type="button"
-        class="media-arrow media-prev"
-        id="mediaPrev"
-        aria-label="Previous"
-    >↑</button>
-
-    <div class="media-counter">
-        <span id="mediaCurrent">01</span>
-        <i>/</i>
-        <span>07</span>
+    <div class="media-content">
+      <button type="button" class="media-arrow media-prev" id="mediaPrev" aria-label="Previous">↑</button>
+      <div class="media-counter">
+          <span id="mediaCurrent">01</span>
+          <i>/</i>
+          <span>07</span>
+      </div>
+      <div class="media-video-frame">
+          <div class="media-scan"></div>
+          <video id="mediaVideo" class="media-video" muted playsinline autoplay loop>
+              <source id="mediaVideoSource" src="assets/media/media01.mp4" type="video/mp4">
+          </video>
+          <div class="media-corner corner-tl"></div>
+          <div class="media-corner corner-tr"></div>
+          <div class="media-corner corner-bl"></div>
+          <div class="media-corner corner-br"></div>
+      </div>
+      <div class="media-info">
+          <span class="media-type" id="mediaType">FILM / 01</span>
+          <h3 id="mediaTitle">TITLE</h3>
+          <p id="mediaQuote">"Aquí irá la frase o descripción de la obra."</p>
+      </div>
+      <div class="media-images" id="mediaImages">
+          <img id="mediaImage1" src="" alt="">
+          <img id="mediaImage2" src="" alt="">
+          <img id="mediaImage3" src="" alt="">
+      </div>
+      <button type="button" class="media-arrow media-next" id="mediaNext" aria-label="Next">↓</button>
+      <div class="media-keyhint">
+          ↑ ↓ &nbsp; / &nbsp; KEYBOARD
+      </div>
     </div>
-
-    <div class="media-video-frame">
-        <div class="media-scan"></div>
-        <video
-            id="mediaVideo"
-            class="media-video"
-            muted
-            playsinline
-            autoplay
-            loop
-        >
-            <source
-                id="mediaVideoSource"
-                src="assets/media/media01.mp4"
-                type="video/mp4"
-            >
-        </video>
-        <div class="media-corner corner-tl"></div>
-        <div class="media-corner corner-tr"></div>
-        <div class="media-corner corner-bl"></div>
-        <div class="media-corner corner-br"></div>
-    </div>
-
-    <div class="media-info">
-        <span class="media-type" id="mediaType">FILM / 01</span>
-        <h3 id="mediaTitle">TITLE</h3>
-        <p id="mediaQuote">"Aquí irá la frase o descripción de la obra."</p>
-    </div>
-
-    <div class="media-images" id="mediaImages">
-        <img id="mediaImage1" src="" alt="">
-        <img id="mediaImage2" src="" alt="">
-        <img id="mediaImage3" src="" alt="">
-    </div>
-
-    <button
-        type="button"
-        class="media-arrow media-next"
-        id="mediaNext"
-        aria-label="Next"
-    >↓</button>
-
-    <div class="media-keyhint">
-        ↑ ↓ &nbsp; / &nbsp; KEYBOARD
-    </div>
-
-</div>
-
-</section>
+  </section>
 </main>
 </div>
+
 <script src="script.js"></script>
+<script>
+  /* SCRIPT DE APOYO PARA COORDINAR INTRO, ENTER Y EL VIDEO IZQUIERDO DE MAKIMA */
+  document.addEventListener("DOMContentLoaded", () => {
+      const introScreen = document.getElementById("intro");
+      const mainScreen = document.getElementById("main");
+      const enterBtn = document.getElementById("enterBtn");
+      const leftVideoContainer = document.getElementById("leftVideoContainer");
+      const edgeTabs = document.querySelectorAll(".edge-tab");
+      const panelCloseBtns = document.querySelectorAll("[data-close-panel]");
+
+      function startMainInterface() {
+          if (introScreen && !introScreen.classList.contains("is-hidden")) {
+              introScreen.classList.add("is-hidden");
+              mainScreen.classList.remove("is-hidden");
+          }
+      }
+
+      // Al hacer click en el botón ENTER o presionar la tecla Enter
+      if (enterBtn) {
+          enterBtn.addEventListener("click", startMainInterface);
+      }
+
+      window.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+              startMainInterface();
+          }
+      });
+
+      // Ocultar el video loop izquierdo de Makima cuando se abre cualquier panel (edge-tab)
+      edgeTabs.forEach(tab => {
+          tab.addEventListener("click", () => {
+              if (leftVideoContainer) {
+                  leftVideoContainer.classList.add("hidden-video");
+              }
+          });
+      });
+
+      // Volver a mostrar el video loop izquierdo de Makima cuando se cierra un panel
+      panelCloseBtns.forEach(btnClose => {
+          btnClose.addEventListener("click", () => {
+              if (leftVideoContainer) {
+                  leftVideoContainer.classList.remove("hidden-video");
+              }
+          });
+      });
+  });
+</script>
 </body>
 </html>
