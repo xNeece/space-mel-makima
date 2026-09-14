@@ -38,11 +38,11 @@ button{font:inherit;color:inherit}
 
 /* TEXTOS JAPONESES DESPLAZADOS MÁS A LA DERECHA */
 .japanese{position:absolute;z-index:3;color:rgba(255,255,255,.16);font-size:20px;writing-mode:vertical-rl;letter-spacing:.35em}
-.japanese-one{left:145px !important;top:16%}
+.japanese-one{left:90px !important;top:16%}
 .japanese-two{
     position:absolute !important;
-    left:145px !important;
-    top:54% !important;
+    left:90px !important;
+    top:71% !important;
     right:auto !important;
     bottom:auto !important;
     transform:none !important;
@@ -68,7 +68,7 @@ button{font:inherit;color:inherit}
 .vertical-title{
     position:absolute;
     left:55px !important;
-    top:50%;
+    top:60%;
     z-index:4;
     transform:translateY(-50%) rotate(-90deg);
     transform-origin:left top;
