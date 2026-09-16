@@ -132,9 +132,25 @@ document.addEventListener('DOMContentLoaded',()=>{
             stage.style.transform=`translate3d(${x*-3}px,${y*-2}px,0)`;
         });
 
-        document.querySelectorAll('[data-panel]').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.panel').forEach(p=>p.classList.remove('is-open'));document.getElementById('panel-'+t.dataset.panel)?.classList.add('is-open')}));
-        document.querySelectorAll('[data-close-panel]').forEach(b=>b.addEventListener('click',()=>document.querySelectorAll('.panel').forEach(p=>p.classList.remove('is-open'))));
-        document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.panel').forEach(p=>p.classList.remove('is-open'))});
+        const leftVideoContainer = document.getElementById('leftVideoContainer');
+
+        document.querySelectorAll('[data-panel]').forEach(t=>t.addEventListener('click',()=>{
+            document.querySelectorAll('.panel').forEach(p=>p.classList.remove('is-open'));
+            document.getElementById('panel-'+t.dataset.panel)?.classList.add('is-open');
+            if(leftVideoContainer) leftVideoContainer.classList.add('hidden-video');
+        }));
+
+        document.querySelectorAll('[data-close-panel]').forEach(b=>b.addEventListener('click',()=>{
+            document.querySelectorAll('.panel').forEach(p=>p.classList.remove('is-open'));
+            if(leftVideoContainer) leftVideoContainer.classList.remove('hidden-video');
+        }));
+
+        document.addEventListener('keydown',e=>{
+            if(e.key==='Escape'){
+                document.querySelectorAll('.panel').forEach(p=>p.classList.remove('is-open'));
+                if(leftVideoContainer) leftVideoContainer.classList.remove('hidden-video');
+            }
+        });
 
         const GALLERY_ITEMS=[
             {image:'assets/gallery/01.jpg',title:'MAKIMA',description:'Control / Chainsaw Man'},
@@ -482,7 +498,14 @@ const mediaItems = [
     title: 'Insidious',
     quote: 'Release: 2010',
     images:['assets/media/images/media07-01.jpg','assets/media/images/media07-02.jpg','assets/media/images/media07-03.jpg']
-}
+},
+{
+    video: 'assets/media/media08.mp4',
+    type: 'ANIME / 08',
+    title: 'THE AMAZING DIGITAL CIRCUS',
+    quote: 'Release: 2023',
+    images:['assets/media/images/media08-01.jpg','assets/media/images/media08-02.jpg','assets/media/images/media08-03.jpg']
+},
 ];
 
 let mediaIndex = 0;
